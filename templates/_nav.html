@@ -1,0 +1,13 @@
+<header>
+    <nav>
+        <a href="/" class="logo" aria-label="首页">
+            <img src="/static/images/icon.svg" alt="{{ .info.SiteName }}" class="logo-icon">
+            <span class="logo-text">{{ .info.SiteName }}</span>
+        </a>
+        <ul role="navigation" aria-label="主导航">
+            {{ range .nav }}
+            <li><a href="{{ .Href }}">{{ .Label }}</a></li>
+            {{ end }}
+        </ul>
+    </nav>
+</header>

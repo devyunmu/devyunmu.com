@@ -1,0 +1,1 @@
+Deleted internal/middleware/error_test.go (empty file, 2 lines). Build verified: go build -mod=vendor ./... passed.

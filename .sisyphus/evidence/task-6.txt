@@ -1,0 +1,10 @@
+Task 6: Fix Dockerfile duplicate COPY lines
+=============================================
+File modified: Dockerfile
+Action: Removed duplicate COPY --from=builder block (originally lines 17-19)
+Lines removed:
+  - COPY --from=builder /app/devyunmu.com /devyunmu.com  (2nd occurrence)
+  - COPY --from=builder /app/templates /templates          (2nd occurrence)
+  - COPY --from=builder /app/static /static                (2nd occurrence)
+Verification: grep -c "COPY --from=builder /app/devyunmu.com" Dockerfile returns 1
+Confirmation: Only one COPY block remains (lines 13-15)

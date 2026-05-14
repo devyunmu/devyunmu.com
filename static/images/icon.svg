@@ -1,0 +1,16 @@
+<svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景 -->
+  <rect width="400" height="400" rx="80" fill="white"/>
+  
+  <!-- m 主体线条 -->
+  <path d="M100 240C100 210 115 180 150 180C185 180 200 210 200 240M200 240C200 210 215 180 250 180C285 180 300 210 300 240" 
+        stroke="#2C3E50" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <!-- 左侧云朵起笔细节 -->
+  <path d="M85 240C85 220 100 215 110 220" stroke="#4A90E2" stroke-width="12" stroke-linecap="round"/>
+  
+  <!-- 三个温和的点 -->
+  <circle cx="150" cy="225" r="8" fill="#4A90E2" fill-opacity="0.6"/>
+  <circle cx="250" cy="225" r="8" fill="#4A90E2" fill-opacity="0.6"/>
+  <circle cx="310" cy="240" r="8" fill="#F5A623"/> <!-- 暖阳橙点缀 -->
+</svg>

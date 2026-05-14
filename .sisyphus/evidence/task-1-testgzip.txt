@@ -1,0 +1,10 @@
+Task: Fix missing func TestGzip declaration in middleware_test.go
+
+File modified: internal/middleware/middleware_test.go
+Change: Inserted `func TestGzip(t *testing.T) {` before the bare `r := gin.New()` at line 34.
+
+Verification:
+- lsp_diagnostics: No errors
+- go test -mod=vendor -run TestGzip -v ./internal/middleware/ → PASS
+- go test -mod=vendor -v ./internal/middleware/ → 7/7 tests PASS
+  (TestHTTPError, TestErrResponse, TestGzip, TestGzipNoAccept, TestCache, TestSecurityHeaders, TestErrorHandler)

@@ -1,0 +1,42 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ .title }}</title>
+    <meta name="description" content="{{ .description }}">
+    <meta name="author" content="{{ .info.AuthorName }}">
+    <link rel="canonical" href="{{ .info.SiteURL }}">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="{{ .title }}">
+    <meta property="og:description" content="{{ .description }}">
+    <meta property="og:url" content="{{ .info.SiteURL }}">
+    <meta property="og:site_name" content="{{ .info.SiteName }}">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="zh_CN">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ .title }}">
+    <meta name="twitter:description" content="{{ .description }}">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/static/images/icon.svg">
+
+    <!-- Theme color for mobile browsers -->
+    <meta name="theme-color" content="#FFFAF5" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0F0A06" media="(prefers-color-scheme: dark)">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="/static/css/style.css">
+
+    <!-- Structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "{{ .info.AuthorName }}",
+        "url": "{{ .info.SiteURL }}",
+        "description": "{{ .info.AuthorDesc }}"
+    }
+    </script>
+</head>

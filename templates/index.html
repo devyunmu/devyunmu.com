@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+{{ template "_head.html" . }}
+<body>
+    {{ template "_nav.html" . }}
+
+    <main>
+        <section class="hero">
+            <img src="/static/images/full_logo.svg" alt="{{ .info.SiteName }}" class="hero-logo animate-in">
+            <h1 class="hero-name animate-in">{{ .info.SiteName }}</h1>
+            <p class="hero-subtitle animate-in">{{ .info.AuthorDesc }}</p>
+            <div class="hero-actions animate-in">
+                <a href="/about" class="btn btn-primary">关于我</a>
+                <a href="https://github.com/devyunmu" class="btn btn-outline" target="_blank" rel="noopener">GitHub</a>
+            </div>
+        </section>
+
+        <div class="container">
+            <section class="skills-section">
+                <div class="section-label">Skills</div>
+                <h2 class="section-title">专业技能</h2>
+                <div class="grid-wrapper">
+                    {{ range .skills }}
+                    <div class="card animate-in">
+                        <div class="card-icon">{{ .Icon }}</div>
+                        <h3>{{ .Title }}</h3>
+                        <p>{{ .Desc }}</p>
+                    </div>
+                    {{ end }}
+                </div>
+            </section>
+        </div>
+    </main>
+
+    {{ template "_footer.html" . }}
+</body>
+</html>

@@ -1,0 +1,1 @@
+Build exit code: 0 - go build -mod=vendor ./... succeeded

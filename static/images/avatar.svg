@@ -1,0 +1,12 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景：纯净深空灰，极具工业感 -->
+  <rect width="200" height="200" rx="40" fill="#18181B"/>
+  
+  <!-- 晶格组合：三个矩形，象征代码结构的层级与稳定性 -->
+  <!-- 矩形1：左侧支撑 -->
+  <rect x="50" y="80" width="25" height="70" rx="4" fill="#E4E4E7"/>
+  <!-- 矩形2：右侧支撑 -->
+  <rect x="125" y="50" width="25" height="100" rx="4" fill="#E4E4E7"/>
+  <!-- 矩形3：中间连接桥梁 (云端的抽象) -->
+  <rect x="75" y="100" width="50" height="25" rx="4" fill="#71717A"/>
+</svg>
