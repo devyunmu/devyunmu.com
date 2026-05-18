@@ -1,9 +1,0 @@
-Task 7: Create .dockerignore
-File created: /data/shared/projects/devyunmu.com/.dockerignore
-Contents:
-  - .git/        (large git history - unnecessary for build)
-  - .sisyphus/   (agent working files - unnecessary for build)
-  - devyunmu.com (pre-compiled binary - should not be in context)
-  - .env         (may contain secrets)
-Not excluded: vendor/ (required by Dockerfile's COPY vendor ./vendor)
-Verified: Dockerfile line 5 uses COPY vendor ./vendor

@@ -1,1 +1,0 @@
-grep -r "AppError" internal/ cmd/ -> no output (zero references)

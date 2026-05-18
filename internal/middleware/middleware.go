@@ -74,8 +74,10 @@ func Security() gin.HandlerFunc {
 		c.Header("Strict-Transport-Security", "max-age=63072000; includeSubDomains")
 		c.Header("Permissions-Policy", "camera=(), microphone=(), geolocation=()")
 		c.Header("Content-Security-Policy",
-			"default-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; script-src 'self'")
-		c.Next()
+			"default-src 'self'; "+
+				"style-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com; "+
+				"img-src 'self' data:; "+
+				"script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com")
 	}
 }
 

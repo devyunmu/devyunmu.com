@@ -1,13 +1,18 @@
 <header>
-    <nav>
-        <a href="/" class="logo" aria-label="首页">
-            <img src="/static/images/icon.svg" alt="{{ .info.SiteName }}" class="logo-icon">
-            <span class="logo-text">{{ .info.SiteName }}</span>
-        </a>
-        <ul role="navigation" aria-label="主导航">
-            {{ range .nav }}
-            <li><a href="{{ .Href }}">{{ .Label }}</a></li>
-            {{ end }}
-        </ul>
+    <nav class="fixed w-full z-50 top-0 bg-dark-bg/80 backdrop-blur-md border-b border-dark-border transition-all duration-300">
+        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="/" class="text-xl font-bold text-white tracking-wider flex items-center gap-2">
+                <svg class="w-6 h-6 text-brand-light" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                Dev<span class="text-brand-light">云沐</span>
+            </a>
+            <div class="hidden md:flex space-x-8 text-sm font-medium">
+                <a href="#about" class="hover:text-brand-light transition-colors">关于我</a>
+                <a href="#skills" class="hover:text-brand-light transition-colors">技术栈</a>
+                <a href="#projects" class="hover:text-brand-light transition-colors">项目实战</a>
+            </div>
+            <a href="#contact" class="hidden md:inline-flex px-4 py-2 text-sm bg-brand-light/10 text-brand-light border border-brand-light/30 rounded-lg hover:bg-brand-light hover:text-white transition-colors">
+                联系探讨
+            </a>
+        </div>
     </nav>
 </header>

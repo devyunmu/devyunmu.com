@@ -4,8 +4,6 @@
 *.dll
 *.so
 *.dylib
-devyunmu.com
-cmd/server/server
 /devyunmu.com
 
 # Test binary
@@ -26,3 +24,6 @@ Thumbs.db
 
 # Env
 .env
+
+# Sisyphus
+.sisyphus/
