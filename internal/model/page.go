@@ -29,11 +29,11 @@ var NavItems = []NavItem{
 
 var Info = SiteInfo{
 	Email:       "m@devyunmu.com",
-	Description: "云沐 (Yun Mu) — AI 原生开发工程师 / 云原生后端架构师，5年+ 经验，深耕 Spring Cloud 微服务架构。具备全栈开发与性能调优能力，系统性整合 Cursor + OpenCode 构建 AI 原生开发工作流。后端擅长微服务与数据库优化，前端可独立交付小程序。",
+	Description: "云沐 (Yun Mu) — 全栈开发工程师 / 云原生后端架构师，5年+ 经验，深耕 Spring Cloud 微服务架构。具备全栈开发与性能调优能力，系统性整合 Cursor + OpenCode 构建 AI 辅助开发工作流。后端擅长微服务与数据库优化，前端可独立交付小程序。",
 	SiteName:    "Dev云沐",
 	SiteURL:     "https://devyunmu.com",
 	AuthorName:  "云沐",
-	AuthorDesc:  "AI 原生开发工程师 / 云原生后端架构师 · 全栈交付 · 效能革新",
+	AuthorDesc:  "全栈开发工程师 / 云原生后端架构师 · 深度交付 · 效能革新",
 }
 
 var Skills = []Skill{
@@ -68,7 +68,7 @@ var Skills = []Skill{
 		Icon:  template.HTML(`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>`),
 	},
 	{
-		Title: "AI 原生开发工作流",
+		Title: "AI 辅助开发工作流",
 		Desc:  "系统性整合 Cursor IDE 与 OpenCode 平台，构建从需求分析到部署的 AI 协同开发流程，独立产品交付效率提升超 40%",
 		Icon:  template.HTML(`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z"/><path d="M12 6v6l4 2"/></svg>`),
 	},
