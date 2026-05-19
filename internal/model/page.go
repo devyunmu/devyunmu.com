@@ -149,19 +149,4 @@ type DesignChallenge struct {
 	HighlightColor string
 }
 
-var DesignChallenges = []DesignChallenge{
-	{
-		Slug:           "data-migration",
-		Title:          "百亿行级数据迁移",
-		Subtitle:       "电力交易辅助决策系统",
-		Tag:            "架构设计推演",
-		TagColor:       "blue",
-		Summary:        "基于真实业务场景的架构设计推演：海量时序数据累计超百亿行、单表 TB 级，如何设计分阶段迁移方案（历史全量 + 增量同步 + 灰度切换），实现业务零停机、数据零丢失。",
-		Challenge:      "系统使用 ClickHouse 存储百亿行时序数据（负荷、电价、新能源出力等），需迁移至 MySQL 8.0 以满足事务支持和复杂关联查询需求。迁移窗口期短，业务不能停，数据一致性要求极高。",
-		Approach:       "划分数据预处理、全量迁移、增量同步、灰度切换、旧系统下线五个阶段。历史数据按月分片并行导出，使用 LOAD DATA INFILE 高效导入；增量阶段采用单向同步避免双向写入冲突；切换阶段通过 Nginx/Nacos 灰度流量控制。",
-		Result:         "3 年全量数据无损迁移，业务零停机。迁移后查询性能满足业务需求，成功将时序数据纳入 MySQL 事务体系，支持复杂关联分析和行级更新。",
-		TechStack:      []string{"ClickHouse", "MySQL 8.0", "DataX", "Spring Boot"},
-		Highlight:      "百亿行 · 零丢失 · 零停机",
-		HighlightColor: "blue",
-	},
-}
+var DesignChallenges = []DesignChallenge{}
