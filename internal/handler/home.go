@@ -31,3 +31,53 @@ func About(c *gin.Context) {
 		"info":        model.Info,
 	})
 }
+
+func Cases(c *gin.Context) {
+	c.HTML(http.StatusOK, "cases.html", gin.H{
+		"title":       "案例实战 — Dev云沐",
+		"description": "全栈开发工程师 / 云原生后端架构师的技术案例实战",
+		"nav":         model.NavItems,
+		"info":        model.Info,
+		"cases":       model.CaseStudies,
+		"challenges":  model.DesignChallenges,
+	})
+}
+
+func CaseDetail(c *gin.Context) {
+	slug := c.Param("slug")
+	var caseStudy *model.CaseStudy
+	for i := range model.CaseStudies {
+		if model.CaseStudies[i].Slug == slug {
+			caseStudy = &model.CaseStudies[i]
+			break
+		}
+	}
+	if caseStudy == nil {
+		var designChallenge *model.DesignChallenge
+		for i := range model.DesignChallenges {
+			if model.DesignChallenges[i].Slug == slug {
+				designChallenge = &model.DesignChallenges[i]
+				break
+			}
+		}
+		if designChallenge == nil {
+			c.Status(http.StatusNotFound)
+			return
+		}
+		c.HTML(http.StatusOK, "case-detail.html", gin.H{
+			"title":       designChallenge.Title + " — Dev云沐",
+			"description": designChallenge.Summary,
+			"nav":         model.NavItems,
+			"info":        model.Info,
+			"case":        designChallenge,
+		})
+		return
+	}
+	c.HTML(http.StatusOK, "case-detail.html", gin.H{
+		"title":       caseStudy.Title + " — Dev云沐",
+		"description": caseStudy.Summary,
+		"nav":         model.NavItems,
+		"info":        model.Info,
+		"case":        caseStudy,
+	})
+}

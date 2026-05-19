@@ -43,6 +43,8 @@ func main() {
 	r.GET("/health", handler.Health)
 	r.GET("/", handler.Home)
 	r.GET("/about", handler.About)
+	r.GET("/cases", handler.Cases)
+	r.GET("/cases/:slug", handler.CaseDetail)
 
 	addr := ":" + cfg.Port
 	log.Printf("Starting server on %s", addr)
