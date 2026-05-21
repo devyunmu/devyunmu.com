@@ -26,7 +26,7 @@ type Skill struct {
 var NavItems = []NavItem{
 	{Label: "首页", Href: "/"},
 	{Label: "关于", Href: "/about"},
-	{Label: "文档", Href: "/tutorials"},
+	{Label: "文档", Href: "/docs"},
 }
 
 var Info = SiteInfo{
