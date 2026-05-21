@@ -31,11 +31,11 @@ var NavItems = []NavItem{
 
 var Info = SiteInfo{
 	Email:       "m@devyunmu.com",
-	Description: "云沐 (Yun Mu) — 全栈开发工程师 / 云原生后端架构师，5年+ 经验，深耕 Spring Cloud 微服务架构。具备全栈开发与性能调优能力，系统性整合 Cursor + OpenCode 构建 AI 辅助开发工作流。后端擅长微服务与数据库优化，前端可独立交付小程序。",
+	Description: "云沐 (Yun Mu) — 全栈开发工程师 / Java后端专家，5年+ 经验，深耕 Spring Cloud 微服务架构与数据库性能优化。擅长高并发系统设计与复杂查询调优，可独立交付全栈应用。",
 	SiteName:    "Dev云沐",
 	SiteURL:     "https://devyunmu.com",
 	AuthorName:  "云沐",
-	AuthorDesc:  "全栈开发工程师 / 云原生后端架构师 · 深度交付 · 效能革新",
+	AuthorDesc:  "全栈开发工程师 / Java后端专家 · 深度交付 · 效能革新",
 	ICP:         "湘ICP备2024062354号-3",
 }
 
@@ -72,7 +72,7 @@ var Skills = []Skill{
 	},
 	{
 		Title: "AI 辅助开发工作流",
-		Desc:  "系统性整合 Cursor IDE 与 OpenCode 平台，构建从需求分析到部署的 AI 协同开发流程，独立产品交付效率提升超 40%",
+		Desc:  "系统性整合 Cursor IDE 与 OpenCode 平台，构建从需求分析到部署的 AI 协同开发流程",
 		Icon:  template.HTML(`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z"/><path d="M12 6v6l4 2"/></svg>`),
 	},
 }
@@ -127,10 +127,10 @@ var CaseStudies = []CaseStudy{
 		Subtitle:       "沐晴记账小程序",
 		Tag:            "独立产品",
 		TagColor:       "purple",
-		Summary:        "从 0 到 1 独立完成产品设计、UI 实现、后端开发到部署上线全流程。重度引入 AI Agent 辅助开发（Cursor + OpenCode 双引擎），开发效率提升约 40%。",
+		Summary:     "从 0 到 1 独立完成产品设计、UI 实现、后端开发到部署上线全流程。系统性运用 AI 辅助编程工具（Cursor + OpenCode），高效实现多维数据可视化与统计分析。",
 		Challenge:      "需要独立交付一款完整的微信小程序，涵盖用户体系、账单记录、分类统计、数据可视化等核心功能，且要求代码结构清晰、可维护性强，具备持续迭代能力。",
-		Approach:       "使用小程序原生框架 + 微信云开发，独立设计产品原型和交互逻辑。引入 Cursor AI Agent 作为主力开发工具，系统性整合 OpenCode 平台辅助代码审查和优化。采用组件化开发模式，确保代码复用率和可维护性。",
-		Result:         "产品成功上线并稳定运行，核心功能完整可用。AI 辅助开发使整体效率提升 40%，代码质量达到生产标准，持续迭代中。",
+		Approach:       "使用小程序原生框架 + 微信云开发，独立设计产品原型和交互逻辑。系统性运用 Cursor IDE 与 OpenCode 平台辅助开发，采用组件化开发模式，确保代码复用率和可维护性。",
+		Result:         "产品成功上线并稳定运行，核心功能完整可用，代码质量达到生产标准，持续迭代中。",
 		TechStack:      []string{"小程序原生", "微信云开发", "Cursor", "OpenCode"},
 		Highlight:      "0→1 独立交付",
 		HighlightColor: "purple",

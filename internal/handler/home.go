@@ -11,7 +11,7 @@ import (
 
 func Home(c *gin.Context) {
 	c.HTML(http.StatusOK, "index.html", gin.H{
-		"title":       "Dev云沐 — 全栈开发工程师 / 云原生后端架构师 · 深度交付 · 效能革新",
+		"title":       "Dev云沐 — 全栈开发工程师 / Java后端专家 · 深度交付 · 效能革新",
 		"description": model.Info.Description,
 		"nav":         model.NavItems,
 		"info":        model.Info,
@@ -26,7 +26,7 @@ func Health(c *gin.Context) {
 func About(c *gin.Context) {
 	c.HTML(http.StatusOK, "about.html", gin.H{
 		"title":       "关于 — Dev云沐",
-		"description": "关于云沐 — 全栈开发工程师 / 云原生后端架构师，深耕 Spring Cloud 微服务架构，系统性整合 Cursor + OpenCode 构建 AI 辅助开发工作流，具备全栈开发与性能调优能力。",
+		"description": "关于云沐 — 全栈开发工程师 / Java后端专家，深耕 Spring Cloud 微服务架构，擅长后端系统设计与性能优化，可独立交付完整项目。",
 		"nav":         model.NavItems,
 		"info":        model.Info,
 	})
@@ -35,7 +35,7 @@ func About(c *gin.Context) {
 func Cases(c *gin.Context) {
 	c.HTML(http.StatusOK, "cases.html", gin.H{
 		"title":       "案例实战 — Dev云沐",
-		"description": "全栈开发工程师 / 云原生后端架构师的技术案例实战",
+		"description": "全栈开发工程师 / Java后端专家的技术案例实战",
 		"nav":         model.NavItems,
 		"info":        model.Info,
 		"cases":       model.CaseStudies,
