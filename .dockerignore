@@ -1,4 +1,9 @@
 .git/
+.gitignore
+.gitattributes
 .sisyphus/
-# devyunmu.com
 .env
+*.md
+.DS_Store
+.idea/
+.vscode/

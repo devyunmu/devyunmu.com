@@ -9,7 +9,7 @@
 - **SEO 优化** — 内嵌 JSON-LD 结构化数据（Person Schema）
 - **安全优先** — HSTS（2年）、严格 CSP、Permissions-Policy 全禁用
 - **响应式设计** — 移动端适配，`prefers-reduced-motion` 无障碍支持
-- **Docker 部署** — 多阶段构建（golang:1.26 → scratch），镜像极小
+- **Docker 部署** — 纯 scratch 镜像，不含 Go 运行时，镜像极小（~15MB）
 - **零依赖运行** — 编译后单二进制文件，无需运行时环境
 
 ## 快速开始
@@ -30,26 +30,30 @@ PORT=8080 go run ./cmd/server
 ### Docker
 
 ```bash
-# 构建镜像
-docker build -t devyunmu .
+# 本地编译二进制
+go build -o devyunmu.com ./cmd/server
+
+# 构建镜像（无需 golang 编译镜像）
+docker build -t devyunmu.com .
 
 # 运行容器
-docker run -p 8080:8080 devyunmu
+docker run -p 8080:8080 devyunmu.com
 ```
 
 ### 部署到远程服务器
 
 ```bash
-# 本地导出镜像
+# 本地：编译二进制 → 构建镜像 → 导出
+go build -o devyunmu.com ./cmd/server
+docker build -t devyunmu.com .
 docker save devyunmu.com:latest | gzip > /tmp/devyunmu.tar.gz
-
-# 传输到服务器
 scp /tmp/devyunmu.tar.gz root@<IP>:/tmp/
 
-# 远程加载并运行
-ssh root@<IP> "gunzip -c /tmp/devyunmu.tar.gz | docker load && \
-  docker rm -f devyunmu 2>/dev/null; \
-  docker run -d --name devyunmu -p 8080:8080 --restart unless-stopped devyunmu.com:latest"
+# 远程：加载镜像 → 替换容器
+ssh root@<IP> "docker load < /tmp/devyunmu.tar.gz && \
+  docker stop devyunmu && docker rm devyunmu && \
+  docker run -d --name devyunmu -p 8080:8080 --restart unless-stopped devyunmu.com:latest && \
+  rm /tmp/devyunmu.tar.gz"
 ```
 
 ## 项目结构
@@ -64,8 +68,7 @@ ssh root@<IP> "gunzip -c /tmp/devyunmu.tar.gz | docker load && \
 │   └── model/          # 数据模型 + 硬编码站点内容
 ├── templates/          # Go HTML 模板（_ 前缀为局部模板）
 ├── static/             # 静态资源：SVG 图标、robots.txt、sitemap.xml
-├── vendor/             #  vendored 依赖（Gin 及传递依赖）
-├── Dockerfile          # 多阶段构建
+├── Dockerfile          # 纯 scratch 部署镜像
 └── go.mod              # 模块路径：devyunmu.com，Go 1.26
 ```
 
@@ -77,8 +80,8 @@ ssh root@<IP> "gunzip -c /tmp/devyunmu.tar.gz | docker load && \
 | 框架 | Gin v1.10 |
 | 模板 | Go `html/template` |
 | 样式 | Tailwind CSS CDN（深色主题，品牌色 `#06b6d4`） |
-| 部署 | Docker 多阶段构建（golang:1.26 → scratch） |
-| 依赖管理 | Go Modules + vendor 目录 |
+| 部署 | Docker scratch 镜像（本地编译 → 纯部署镜像） |
+| 依赖管理 | Go Modules |
 
 ## 路由
 
@@ -119,8 +122,8 @@ PORT=3000 go run ./cmd/server
 # 运行测试
 go test ./...
 
-# 编译二进制（使用 vendor）
-CGO_ENABLED=0 go build -mod=vendor -o devyunmu.com ./cmd/server
+# 编译二进制
+CGO_ENABLED=0 go build -o devyunmu.com ./cmd/server
 ```
 
 ## 其他说明
