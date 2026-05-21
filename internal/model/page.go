@@ -316,7 +316,7 @@ mvn spring-boot:run</code></pre>
 		TechStack:     []string{"Java 17", "Spring Boot 3.x", "Maven", "JUnit 5"},
 		Difficulty:    "入门",
 		ReadTime:      "25 分钟",
-		CreatedAt:     "2026-05-21",
+		CreatedAt:     "2026-03-15",
 		UpdatedAt:     "2026-05-21",
 	},
 	{
@@ -478,7 +478,7 @@ public class ConfigController {
 		TechStack:     []string{"Spring Cloud", "Nacos", "Gateway", "Sentinel", "OpenFeign"},
 		Difficulty:    "进阶",
 		ReadTime:      "45 分钟",
-		CreatedAt:     "2026-05-21",
+		CreatedAt:     "2026-04-02",
 		UpdatedAt:     "2026-05-21",
 	},
 	{
@@ -595,7 +595,7 @@ try {
 		TechStack:     []string{"MySQL 8.0", "MyBatis Plus", "ShardingSphere"},
 		Difficulty:    "进阶",
 		ReadTime:      "35 分钟",
-		CreatedAt:     "2026-05-21",
+		CreatedAt:     "2026-04-20",
 		UpdatedAt:     "2026-05-21",
 	},
 	{
@@ -795,7 +795,7 @@ public void delete(Long id) {
 		TechStack:     []string{"Redis 7", "Spring Data Redis", "Redisson", "Lettuce"},
 		Difficulty:    "中级",
 		ReadTime:      "30 分钟",
-		CreatedAt:     "2026-05-21",
+		CreatedAt:     "2026-05-05",
 		UpdatedAt:     "2026-05-21",
 	},
 	{
@@ -932,7 +932,7 @@ jad com.example.service.UserService</code></pre>
 		TechStack:     []string{"Java 17", "JVM", "Arthas", "G1/ZGC"},
 		Difficulty:    "高级",
 		ReadTime:      "50 分钟",
-		CreatedAt:     "2026-05-21",
+		CreatedAt:     "2026-05-15",
 		UpdatedAt:     "2026-05-21",
 	},
 	{
