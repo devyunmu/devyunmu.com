@@ -14,6 +14,7 @@ type SiteInfo struct {
 	SiteURL     string
 	AuthorName  string
 	AuthorDesc  string
+	ICP         string
 }
 
 type Skill struct {
@@ -34,6 +35,7 @@ var Info = SiteInfo{
 	SiteURL:     "https://devyunmu.com",
 	AuthorName:  "云沐",
 	AuthorDesc:  "全栈开发工程师 / 云原生后端架构师 · 深度交付 · 效能革新",
+	ICP:         "湘ICP备2024062354号-3",
 }
 
 var Skills = []Skill{
