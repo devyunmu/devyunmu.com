@@ -81,3 +81,35 @@ func CaseDetail(c *gin.Context) {
 		"case":        caseStudy,
 	})
 }
+
+func Docs(c *gin.Context) {
+	c.HTML(http.StatusOK, "docs.html", gin.H{
+		"title":       "Java 技术文档 — Dev云沐",
+		"description": "系统性 Java 后端开发文档，涵盖 Spring Boot、微服务、数据库、缓存、并发编程等核心技术领域。",
+		"nav":         model.NavItems,
+		"info":        model.Info,
+		"docs":   model.Docs,
+	})
+}
+
+func DocDetail(c *gin.Context) {
+	slug := c.Param("slug")
+	var doc *model.Doc
+	for i := range model.Docs {
+		if model.Docs[i].Slug == slug {
+			doc = &model.Docs[i]
+			break
+		}
+	}
+	if doc == nil {
+		c.Status(http.StatusNotFound)
+		return
+	}
+	c.HTML(http.StatusOK, "doc-detail.html", gin.H{
+		"title":       doc.Title + " — Dev云沐",
+		"description": doc.Summary,
+		"nav":         model.NavItems,
+		"info":        model.Info,
+		"doc":         doc,
+	})
+}

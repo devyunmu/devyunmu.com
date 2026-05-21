@@ -26,6 +26,7 @@ type Skill struct {
 var NavItems = []NavItem{
 	{Label: "首页", Href: "/"},
 	{Label: "关于", Href: "/about"},
+	{Label: "文档", Href: "/tutorials"},
 }
 
 var Info = SiteInfo{
@@ -152,3 +153,99 @@ type DesignChallenge struct {
 }
 
 var DesignChallenges = []DesignChallenge{}
+
+type Doc struct {
+	Slug        string
+	Title       string
+	Subtitle    string
+	Category    string
+	CategoryColor string
+	Summary     string
+	Content     template.HTML
+	TechStack   []string
+	Difficulty  string
+	ReadTime    string
+	CreatedAt   string
+	UpdatedAt   string
+}
+
+var Docs = []Doc{
+	{
+		Slug:          "java-spring-boot-quickstart",
+		Title:         "Spring Boot 快速入门指南",
+		Subtitle:      "从零构建生产级 Java 后端服务",
+		Category:      "Spring Boot",
+		CategoryColor: "emerald",
+		Summary:       "手把手带你从零搭建 Spring Boot 项目，涵盖依赖管理、配置分层、RESTful API 设计、统一异常处理与日志规范，适合初学者快速上手。",
+		TechStack:     []string{"Java 17", "Spring Boot 3.x", "Maven", "JUnit 5"},
+		Difficulty:    "入门",
+		ReadTime:      "25 分钟",
+		CreatedAt:     "2026-05-21",
+		UpdatedAt:     "2026-05-21",
+	},
+	{
+		Slug:          "spring-cloud-microservices",
+		Title:         "Spring Cloud 微服务架构实战",
+		Subtitle:      "基于 Spring Cloud Alibaba 构建企业级微服务平台",
+		Category:      "微服务",
+		CategoryColor: "blue",
+		Summary:       "深入讲解 Nacos 服务发现与配置中心、OpenFeign 声明式调用、Gateway 网关路由、Sentinel 流量控制等核心组件，配合实战案例完整落地微服务体系。",
+		TechStack:     []string{"Spring Cloud", "Nacos", "Gateway", "Sentinel", "OpenFeign"},
+		Difficulty:    "进阶",
+		ReadTime:      "45 分钟",
+		CreatedAt:     "2026-05-21",
+		UpdatedAt:     "2026-05-21",
+	},
+	{
+		Slug:          "mysql-performance-tuning",
+		Title:         "MySQL 性能优化实战手册",
+		Subtitle:      "从慢查询到高并发，系统性调优方法论",
+		Category:      "数据库",
+		CategoryColor: "orange",
+		Summary:       "涵盖索引设计原则、执行计划分析、慢查询定位、连接池调优、分库分表策略及读写分离实践，解决生产环境常见的数据库性能瓶颈。",
+		TechStack:     []string{"MySQL 8.0", "MyBatis Plus", "ShardingSphere"},
+		Difficulty:    "进阶",
+		ReadTime:      "35 分钟",
+		CreatedAt:     "2026-05-21",
+		UpdatedAt:     "2026-05-21",
+	},
+	{
+		Slug:          "redis-cache-patterns",
+		Title:         "Redis 缓存设计与应用模式",
+		Subtitle:      "高并发场景下的缓存最佳实践",
+		Category:      "缓存",
+		CategoryColor: "purple",
+		Summary:       "详解缓存穿透、缓存击穿、缓存雪崩的解决方案，介绍布隆过滤器、分布式锁、缓存一致性等高级模式，结合 Spring Data Redis 提供完整代码示例。",
+		TechStack:     []string{"Redis 7", "Spring Data Redis", "Redisson", "Lettuce"},
+		Difficulty:    "中级",
+		ReadTime:      "30 分钟",
+		CreatedAt:     "2026-05-21",
+		UpdatedAt:     "2026-05-21",
+	},
+	{
+		Slug:          "jvm-deep-dive",
+		Title:         "JVM 原理与调优深度解析",
+		Subtitle:      "理解内存模型、垃圾回收与线上问题排查",
+		Category:      "底层原理",
+		CategoryColor: "yellow",
+		Summary:       "从 JVM 内存结构出发，深入讲解 G1/ZGC 垃圾回收器原理、常见 OOM 场景分析、Arthas 线上诊断工具使用，以及 GC 日志分析与 JVM 参数调优策略。",
+		TechStack:     []string{"Java 17", "JVM", "Arthas", "G1/ZGC"},
+		Difficulty:    "高级",
+		ReadTime:      "50 分钟",
+		CreatedAt:     "2026-05-21",
+		UpdatedAt:     "2026-05-21",
+	},
+	{
+		Slug:          "java-concurrency-patterns",
+		Title:         "Java 并发编程核心模式",
+		Subtitle:      "线程池、锁机制与并发容器实战",
+		Category:      "并发编程",
+		CategoryColor: "cyan",
+		Summary:       "系统梳理 Java 并发编程知识体系：从 synchronized/volatile 底层实现到 JUC 工具类使用，重点讲解线程池参数调优、CompletableFuture 异步编排及 Fork/Join 框架。",
+		TechStack:     []string{"Java 17", "JUC", "CompletableFuture", "Fork/Join"},
+		Difficulty:    "高级",
+		ReadTime:      "40 分钟",
+		CreatedAt:     "2026-05-21",
+		UpdatedAt:     "2026-05-21",
+	},
+}

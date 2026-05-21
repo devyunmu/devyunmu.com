@@ -45,6 +45,8 @@ func main() {
 	r.GET("/about", handler.About)
 	r.GET("/cases", handler.Cases)
 	r.GET("/cases/:slug", handler.CaseDetail)
+	r.GET("/docs", handler.Docs)
+	r.GET("/docs/:slug", handler.DocDetail)
 
 	addr := ":" + cfg.Port
 	log.Printf("Starting server on %s", addr)
